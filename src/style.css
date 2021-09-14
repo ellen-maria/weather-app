@@ -16,10 +16,8 @@ ul {
 
 li {
   list-style: none;
-  display: inline;
   padding: 0 auto;
   margin: 0 auto;
-  text-align: center;
 }
 .col-2 {
   flex: 0 auto;
