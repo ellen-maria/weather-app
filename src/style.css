@@ -10,10 +10,11 @@ h1 {
 ul {
   margin: 0 auto;
   padding: 0 auto;
+  list-style-type: none;
 }
 
 li {
-  list-style: none;
   padding: 0 auto;
   margin: 0 auto;
+  text-align: center;
 }
