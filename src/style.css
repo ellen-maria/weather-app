@@ -19,3 +19,7 @@ li {
   margin: 0 auto;
   text-align: center;
 }
+.col-2 {
+  float: left;
+  width: 20%;
+}
