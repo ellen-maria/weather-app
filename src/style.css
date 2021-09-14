@@ -24,8 +24,10 @@ li {
 
 row {
   display: flex;
+  float: left;
 }
 
 column {
   flex: 20%;
+  float: left;
 }
