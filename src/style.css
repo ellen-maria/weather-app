@@ -1,0 +1,19 @@
+body {
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+h1 {
+  font-size: large;
+  margin-bottom: 0;
+}
+
+ul {
+  margin: 0 auto;
+  padding: 0 auto;
+}
+
+li {
+  list-style: none;
+  padding: 0 auto;
+  margin: 0 auto;
+}
