@@ -25,3 +25,6 @@ li {
   flex: 0 auto;
   width: 20%;
 }
+.row {
+  text-align: center;
+}
