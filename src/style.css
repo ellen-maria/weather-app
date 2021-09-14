@@ -22,7 +22,10 @@ li {
   text-align: center;
 }
 
-col-2 {
-  float: left;
-  width: 20%;
+row {
+  display: flex;
+}
+
+column {
+  flex: 20%;
 }
