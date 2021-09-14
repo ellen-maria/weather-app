@@ -21,13 +21,7 @@ li {
   margin: 0 auto;
   text-align: center;
 }
-
-row {
-  display: flex;
-  float: left;
-}
-
-column {
-  flex: 20%;
-  float: left;
+.col-2 {
+  flex: 0 auto;
+  width: 20%;
 }
