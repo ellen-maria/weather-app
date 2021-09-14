@@ -11,10 +11,12 @@ ul {
   margin: 0 auto;
   padding: 0 auto;
   list-style-type: none;
+  display: inline;
 }
 
 li {
-  display: inline-block;
+  list-style: none;
+  display: inline;
   padding: 0 auto;
   margin: 0 auto;
   text-align: center;
