@@ -26,3 +26,6 @@ li {
 .row {
   text-align: center;
 }
+.weather-forecast {
+  box-sizing: border-box;
+}
