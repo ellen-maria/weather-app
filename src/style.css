@@ -27,5 +27,5 @@ li {
   text-align: center;
 }
 .weather-forecast {
-  box-sizing: border-box;
+  border-radius: 20px;
 }
