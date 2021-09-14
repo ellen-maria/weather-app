@@ -21,3 +21,11 @@ function formatDate(timestamp) {
   let day = days[date.getDay()];
   return `${hours}:${minutes} ${day}`;
 }
+
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tues", "Weds", "Thurs", "Fri", "Sat"];
+
+  return days[day];
+}
