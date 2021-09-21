@@ -39,6 +39,10 @@ let month = months[now.getMonth()];
 
 p1.innerHTML = `${day} ${date} ${month}, ${hours}:${minutes}`;
 
+if (minutes < 10) {
+  minutes = `0${minutes}`;
+}
+
 function showTemperature(response) {
   console.log(response.data);
   let temperatureElement = document.querySelector("#temperature");
