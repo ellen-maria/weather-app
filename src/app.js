@@ -1,14 +1,4 @@
-function formatDate(timestamp) {
-  let date = new Date(timestamp);
-  let hours = date.getHours();
-  if (hours < 10) {
-    hours = `0${hours}`;
-  }
-  let minutes = date.getMinutes();
-  if (minutes < 10) {
-    minutes = `0${minutes}`;
-  }
-
+function formatDate(date) {
   let days = [
     "Sunday",
     "Monday",
@@ -18,14 +8,39 @@ function formatDate(timestamp) {
     "Friday",
     "Saturday",
   ];
-  let day = days[date.getDay()];
-  return `${hours}:${minutes} ${day}`;
 }
 
-function formatDay(timestamp) {
-  let date = new Date(timestamp * 1000);
-  let day = date.getDay();
-  let days = ["Sun", "Mon", "Tues", "Weds", "Thurs", "Fri", "Sat"];
+let now = new Date();
 
-  return days[day];
+let p1 = document.querySelector("p1");
+
+let date = now.getDate();
+let hours = now.getHours();
+let minutes = now.getMinutes();
+
+let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+let day = days[now.getDay()];
+
+let months = [
+  "Jan",
+  "Feb",
+  "March",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
+];
+let month = months[now.getMonth()];
+
+h3.innerHTML = `${day} ${date} ${month}, ${hours}:${minutes}`;
+
+function showTemperature(response) {
+  console.log(response.data);
+  let temperatureElement = document.querySelector("#temperature");
+  axios.get(`${apiUrl}&appid=${apiKey}`).then(showTemperature);
 }
