@@ -39,6 +39,7 @@ let month = months[now.getMonth()];
 
 p1.innerHTML = `${day} ${date} ${month}, ${hours}:${minutes}`;
 
+let minutes = now.getMinutes();
 if (minutes < 10) {
   minutes = `0${minutes}`;
 }
