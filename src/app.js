@@ -37,10 +37,20 @@ let months = [
 ];
 let month = months[now.getMonth()];
 
-h3.innerHTML = `${day} ${date} ${month}, ${hours}:${minutes}`;
+p1.innerHTML = `${day} ${date} ${month}, ${hours}:${minutes}`;
 
 function showTemperature(response) {
   console.log(response.data);
   let temperatureElement = document.querySelector("#temperature");
+  axios.get(`${apiUrl}&appid=${apiKey}`).then(showTemperature);
+}
+
+let apiKey = "c5fda3433bf3c36bb1ab695d00f225b4";
+let city = "Dublin";
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}&units=metric`;
+function searchCity(cityName) {
+  let apiKey = "c5fda3433bf3c36bb1ab695d00f225b4";
+  let city = cityName;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(`${apiUrl}&appid=${apiKey}`).then(showTemperature);
 }
