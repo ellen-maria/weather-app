@@ -75,6 +75,12 @@ function displayTemperature(response) {
   getForecast(response.data.coord);
 }
 
+function search(city) {
+  let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayTemperature);
+}
+
 let apiKey = "c5fda3433bf3c36bb1ab695d00f225b4";
 let city = "Dublin";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}&units=metric`;
