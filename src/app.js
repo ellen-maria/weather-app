@@ -12,7 +12,7 @@ function formatDate(date) {
 
 let now = new Date();
 
-let p1 = document.querySelector("p1");
+let p1 = document.querySelector("#date");
 
 let date = now.getDate();
 let hours = now.getHours();
@@ -43,36 +43,34 @@ if (minutes < 10) {
   minutes = `0${minutes}`;
 }
 
-function showTemperature(response) {
+function showTempertaure(response) {
   console.log(response.data);
   let temperatureElement = document.querySelector("#temperature");
-  axios.get(`${apiUrl}&appid=${apiKey}`).then(showTemperature);
 }
-
 function displayTemperature(response) {
   let temperatureElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#city");
   let descriptionElement = document.querySelector("#description");
   let humidityElement = document.querySelector("#humidity");
-  let windElement = document.querySelector("#windspeed");
+  let windspeedElement = document.querySelector("#windspeed");
   let dateElement = document.querySelector("#date");
   let iconElement = document.querySelector("#icon");
 
   celsiusTemperature = response.data.main.temp;
 
+  axios.get(`${apiUrl}&appid=${apiKey}`).then(showTemperature);
+
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
   cityElement.innerHTML = response.data.name;
   descriptionElement.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = response.data.main.humidity;
-  windElement.innerHTML = Math.round(response.data.wind.speed);
+  windspeedElement.innerHTML = Math.round(response.data.windspeed.speed);
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
   iconElement.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
-
-  getForecast(response.data.coord);
 }
 
 function search(city) {
