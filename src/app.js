@@ -1,4 +1,5 @@
-function formatDate(date) {
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
   let days = [
     "Sunday",
     "Monday",
@@ -8,40 +9,39 @@ function formatDate(date) {
     "Friday",
     "Saturday",
   ];
-}
+  let today = date.getDate();
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
 
-let now = new Date();
+  let day = days[date.getDay()];
+
+  let months = [
+    "Jan",
+    "Feb",
+    "March",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+  let month = months[date.getMonth()];
+
+  return `${day} ${today} ${month}, ${hours}:${minutes}`;
+}
 
 let p1 = document.querySelector("#date");
-
-let date = now.getDate();
-let hours = now.getHours();
-let minutes = now.getMinutes();
-
-let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-let day = days[now.getDay()];
-
-let months = [
-  "Jan",
-  "Feb",
-  "March",
-  "Apr",
-  "May",
-  "Jun",
-  "Jul",
-  "Aug",
-  "Sep",
-  "Oct",
-  "Nov",
-  "Dec",
-];
-let month = months[now.getMonth()];
-
-p1.innerHTML = `${day} ${date} ${month}, ${hours}:${minutes}`;
-
-if (minutes < 10) {
-  minutes = `0${minutes}`;
-}
+p1.innerHTML = formatDate(new Date());
 
 function showTempertaure(response) {
   console.log(response.data);
