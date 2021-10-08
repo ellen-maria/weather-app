@@ -46,6 +46,7 @@ if (minutes < 10) {
 function showTempertaure(response) {
   console.log(response.data);
   let temperatureElement = document.querySelector("#temperature");
+  axios.get(`${apiUrl}&appid=${apiKey}`).then(showTemperature);
 }
 function displayTemperature(response) {
   let temperatureElement = document.querySelector("#temperature");
@@ -58,13 +59,11 @@ function displayTemperature(response) {
 
   celsiusTemperature = response.data.main.temp;
 
-  axios.get(`${apiUrl}&appid=${apiKey}`).then(showTemperature);
-
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
   cityElement.innerHTML = response.data.name;
   descriptionElement.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = response.data.main.humidity;
-  windspeedElement.innerHTML = Math.round(response.data.windspeed.speed);
+  windElement.innerHTML = Math.round(response.data.wind.speed);
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
   iconElement.setAttribute(
     "src",
@@ -84,7 +83,7 @@ function handleSubmit(event) {
   search(cityInputElement.value);
 }
 
-let form = document.querySelector("#search-form");
+let form = document.querySelector("#search-bar");
 form.addEventListener("submit", handleSubmit);
 
 search("Dublin");

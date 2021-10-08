@@ -1,11 +1,18 @@
 body {
   font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: larger;
+  font-weight: bolder;
+  background: linear-gradient(#fff, #5bc240);
 }
-
 h1 {
   text-align: center;
-  font-size: large;
-  margin-bottom: 0;
+  font-size: 100px;
+  margin: 0 auto;
+  border-radius: 50px;
+}
+h2,
+.overview {
+  padding-left: 100px;
 }
 
 ul {
@@ -26,4 +33,11 @@ li {
 }
 .row {
   text-align: center;
+}
+.pint {
+  margin-left: 900px;
+  margin-bottom: 100px;
+  margin-top: 0mm;
+  position: relative;
+  border-top-right-radius: 0mm;
 }
