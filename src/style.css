@@ -1,8 +1,9 @@
 body {
+  background-image: sky;
   font-family: Georgia, "Times New Roman", Times, serif;
   font-size: larger;
   font-weight: bolder;
-  background: linear-gradient(#fff, #5bc240);
+  background: linear-gradient(#fff 30%, #5bc240);
 }
 h1 {
   text-align: center;
@@ -34,10 +35,13 @@ li {
 .row {
   text-align: center;
 }
-.pint {
-  margin-left: 900px;
-  margin-bottom: 100px;
-  margin-top: 0mm;
+#background {
   position: relative;
-  border-top-right-radius: 0mm;
+}
+.sky {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 400px;
+  height: 300px;
 }
