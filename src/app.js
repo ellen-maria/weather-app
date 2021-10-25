@@ -40,6 +40,8 @@ function formatDate(timestamp) {
   return `${day} ${today} ${month}, ${hours}:${minutes}`;
 }
 
+function displayForecast()
+
 let p1 = document.querySelector("#date");
 p1.innerHTML = formatDate(new Date());
 
@@ -56,6 +58,8 @@ function displayTemperature(response) {
   let windElement = document.querySelector("#wind");
   let dateElement = document.querySelector("#date");
   let iconElement = document.querySelector("#icon");
+
+  displayForecast();
 
   celsiusTemperature = response.data.main.temp;
 
