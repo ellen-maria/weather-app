@@ -45,3 +45,7 @@ li {
   width: 400px;
   height: 300px;
 }
+.weather-temp-min,
+.weather-date {
+  opacity: 0.6;
+}
