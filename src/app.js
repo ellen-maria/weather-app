@@ -40,10 +40,33 @@ function formatDate(timestamp) {
   return `${day} ${today} ${month}, ${hours}:${minutes}`;
 }
 
-function displayForecast()
-
 let p1 = document.querySelector("#date");
 p1.innerHTML = formatDate(new Date());
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  let days = ["Tues", "Weds", "Thurs", "Fri", "Sat"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+    <div class="col-2">
+        <div class="weather-date">${day} </div>
+        <img src="http://openweathermap.org/img/wn/50d@2x.png" alt="" width="30"/>
+        <br>
+        <span class="emoji">☀️</span>
+        <div class="weather-temp">
+          <span class="weather-temp-max"> 21° </span>
+          <span class="weather-temp-min"> 12° </span>
+        </div>
+        </div>
+        `;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
 
 function showTempertaure(response) {
   console.log(response.data);
