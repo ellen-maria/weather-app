@@ -44,26 +44,28 @@ let p1 = document.querySelector("#date");
 p1.innerHTML = formatDate(new Date());
 
 function displayForecast(response) {
-  console.log(response.data.daily);
+  let forecast = response.data.daily;
+
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
-  let days = ["Tues", "Weds", "Thurs", "Fri", "Sat"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
+  forecast.forEach(function (forecastDay, index) {
+    if (index > 6) {
+      forecastHTML =
+        forecastHTML +
+        `
     <div class="col-2">
-        <div class="weather-date">${day} </div>
-        <img src="http://openweathermap.org/img/wn/50d@2x.png" alt="" width="30"/>
+        <div class="weather-forecast-date">${forecastDay.dt} </div>
+        <img src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" alt="" width="30"/>
         <br>
         <span class="emoji">☀️</span>
-        <div class="weather-temp">
-          <span class="weather-temp-max"> 21° </span>
-          <span class="weather-temp-min"> 12° </span>
+        <div class="weather-forecast-temp">
+          <span class="weather-forecast-temp-max"> ${forecastDay.temp.max}° </span>
+          <span class="weather-forecast-temp-min"> ${forecastDay.temp.min}° </span>
         </div>
         </div>
         `;
+    }
   });
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
